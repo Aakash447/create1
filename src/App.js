@@ -1,7 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React,{useEffect} from 'react'
+import axios from 'axios'
 function App() {
+  useEffect(()=>{
+    axios.get('https://jsonplaceholder.typicode.com/posts').then(res=>{
+      console.log('res:',res)
+    }).catch(err=>{
+      console.log('err:',err)
+    })
+  },[])
+
   return (
     <div className="App">
       <header className="App-header">
